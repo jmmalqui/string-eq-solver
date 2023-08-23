@@ -1,12 +1,12 @@
 WHITESPACE = " "
-OPERATORS = "^/*-+"
+OPERATORS = "^/*-%+"
 OPENBRACKET = "("
 CLOSEBRACKET = ")"
 
 
 def solve_eq(expression: str):
     """Evaluates a mathematical expression with the following operators.\n
-    "+" (addition) "-" (substraction) "*" (multiplication) "/" (division) "^" (pow).\n
+    "+" (addition) "-" (substraction) "*" (multiplication) "/" (division) "^" (pow) "%" (modulo).\n
     Example: (3 + 2) + (4 * (5 + 3)) = 37
     """
     index = 0
@@ -136,6 +136,8 @@ def __reduce_pair(num1: float, num2: float, operator: str):
         return num1 / num2
     if operator == "^":
         return num1**num2
+    if operator == "%":
+        return num1 % num2
     else:
         return f"{operator} operator not recognized"
 
