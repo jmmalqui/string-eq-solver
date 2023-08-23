@@ -165,7 +165,3 @@ def __fillstr(string, index, filling):
             break
     string = "".join(l_string)
     return string
-
-
-eq = input("eq:")
-print(solve_eq(eq))
