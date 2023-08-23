@@ -14,10 +14,8 @@ def solve_eq(expression: str):
     buffer = ""
     ob_id = None
     bracket_level = 0
-    debugword = ""
     while True:
         char = expression[index]
-        debugword += char
         if char == OPENBRACKET:
             buffer = ""
             bracket_level += 1
@@ -98,7 +96,7 @@ def __solve_no_brackets(expression: str) -> float:
         if should_continue_parse:
             on_parsing_number += char
         index += 1
-    used_operators = set(operator_list)
+    used_operators = list(set(operator_list))
     for operator in OPERATORS:
         if operator not in used_operators:
             continue
@@ -108,7 +106,7 @@ def __solve_no_brackets(expression: str) -> float:
 
 
 def __solve_iterate_for_operator(
-    operator, expression_number_list, expression_operator_list
+    operator: str, expression_number_list: list, expression_operator_list: list
 ):
     pointer = 0
     while True:
@@ -127,7 +125,7 @@ def __solve_iterate_for_operator(
                 break
 
 
-def __reduce_pair(num1, num2, operator):
+def __reduce_pair(num1: float, num2: float, operator: str):
     if operator == "+":
         return num1 + num2
     if operator == "-":
@@ -142,7 +140,7 @@ def __reduce_pair(num1, num2, operator):
         return f"{operator} operator not recognized"
 
 
-def __delsubstr(string, index, substr):
+def __delsubstr(string: str, index: int, substr: str):
     l_string = list(string)
     pointer = 0
     while True:
@@ -155,7 +153,7 @@ def __delsubstr(string, index, substr):
     return string
 
 
-def __fillstr(string, index, filling):
+def __fillstr(string: str, index: int, filling: str):
     l_string = list(string)
     pointer = index
     while True:
