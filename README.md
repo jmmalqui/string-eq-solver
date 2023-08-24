@@ -9,7 +9,7 @@ Download the zip file and paste it onto your project, no extra dependecies requi
 Basic operators such as:
 
 ```txt
-"+" addtion
+"+" addition
 "-" substraction
 "*" product
 "/" division
