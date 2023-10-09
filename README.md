@@ -1,4 +1,7 @@
 # Mathematical Expression Evaluator
+This thing does not work anymore dont use it.
+
+
 
 Receives a string and evaluates it as a mathematical expression.
 
